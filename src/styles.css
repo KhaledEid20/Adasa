@@ -1,2 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
+:root {
+    --color-bg: #1a1a1adc;
+    --color-primary: #ff6b1a;      
+    --color-primary-hover: #e85d0f;
+    --color-text-light: #ffffff;
+    --color-text-muted: #a8a8a8;
+    --button-gradient: linear-gradient(135deg, #ff6b1a, #e85d0f);
+
+    --color-bg-alt: #8a3535; 
+    --color-button-blue: #1a73e8; 
+    --color-border-subtle: rgba(255,255,255,0.3);
+}
