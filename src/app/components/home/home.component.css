@@ -1,0 +1,143 @@
+#hero {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    background-image: 
+        linear-gradient(rgba(24, 24, 24, 0.9) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 24, 24, 0.9) 1px, transparent 1px);
+    background-size: 60px 60px;
+    padding-top: 150px;
+}
+
+.content{
+    max-width: 1000px;
+}
+
+.badge{
+    background-color: #ff6a1a1c;
+    border: 1px solid #ff6a1a41;
+}
+
+.badge span{
+    margin-right: 7px;
+}
+.badge span:nth-child(1),
+.badge span:nth-child(2){
+    display: inline-block;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+.badge span:first-child{
+    width: 6px;
+    height : 6px;
+}
+.badge span:nth-child(2){
+    width: 8px;
+    height : 8px;
+}
+.badge span:nth-child(3){
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-light);
+
+}
+
+.words h1{
+    font-size: 3.125rem;
+    color: white;
+    font-weight: 700;
+}
+.words h1 span{
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.words p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 2.4375rem;
+    color: var(--color-text-muted);
+}
+.buttons .explore{
+    background: var(--button-gradient);
+    color: white;
+}
+.buttons .explore i{
+    position: relative;
+    transition: 2s all;
+}
+.buttons:hover .explore i{
+    transition: 2s all;
+    right : 8px;
+}
+.buttons .explore p{
+    background: var(--button-gradient);
+    color: white;
+    min-width: 8.125rem;
+}
+.buttons .learn-more{
+    color: white;
+    border: 1px solid var(--color-border-subtle) !important;
+}
+.buttons .learn-more:hover{
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary) !important;
+}
+
+.stats .item {
+    background-color: #161614;
+    border: 1px solid var(--color-border-subtle);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.stats .item:hover {
+    transform: translateY(-5px);
+}
+
+.stats .item i {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+.stats .item h2 {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.stats .item p {
+    color: var(--color-text-muted);
+}
+.glow1,
+.glow2 {
+    width: 333px;
+    height: 230px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    filter: blur(70px);
+    box-shadow: 0 0 120px rgba(255, 106, 26, 0.35);
+}
+.glow1 {
+    top: 300px;
+    left: 200px;
+    opacity: 0.15;
+}
+.glow2 {
+    bottom: 256px;
+    right: 336px;
+    opacity: 0.05;
+
+}
+@media (min-width: 995px) {
+    .words h1{
+        font-size: 4.5rem;
+    }
+    .words p {
+        font-size: 1.5rem;
+    }
+}

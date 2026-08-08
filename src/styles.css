@@ -1,9 +1,14 @@
+::selection {
+    background: #e85d0f;
+    color: white;
+}
 :root {
     --color-bg: #1a1a1adc;
     --color-primary: #ff6b1a;      
     --color-primary-hover: #e85d0f;
+    --text-gradient: linear-gradient(135deg, #f97316, #fbbf24);;
     --color-text-light: #ffffff;
-    --color-text-muted: #a8a8a8;
+    --color-text-muted: #a1a1a1;
     --button-gradient: linear-gradient(135deg, #ff6b1a, #e85d0f);
 
     --color-bg-alt: #8a3535; 
