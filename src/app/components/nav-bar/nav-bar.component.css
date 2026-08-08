@@ -23,9 +23,10 @@ ul{
 .navbar-toggler{
     color: white;
 }
-.active{
+.active {
     background-color: var(--color-primary);
-    color: white;
+    color: white !important;
+    border-radius: 30px;
 }
 @media (min-width: 995px) {
     .navbar .container {
