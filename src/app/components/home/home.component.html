@@ -1,4 +1,4 @@
-<div id="hero" class="re">
+<div id="hero" class>
     <div class="container-lg container-fluid">
         <div
             class="content mx-auto text-center justify-content-center d-flex flex-column align-items-center justify-content-center py-5 px-3">
@@ -17,7 +17,7 @@
                     التصوير.</p>
             </div>
             <div
-                class="buttons d-flex justify-content-center align-items-center gap-4">
+                class="buttons d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
                 <a type="button"
                     class="explore btn rounded-pill px-4 py-3 w-100 border-0 d-flex justify-content-center align-items-center gap-2">
                     <p class="mb-0">استكشف
@@ -77,4 +77,81 @@
     </div>
     <div class="glow1 position-absolute rounded-circle"></div>
     <div class="glow2 position-absolute rounded-circle"></div>
+</div>
+<div id="mini-blog">
+    <div class="container-fluid container-lg">
+        <div class="badge px-3 py-2 rounded-pill">
+            <span></span>
+            <span></span>
+            <span>
+                مميز</span>
+        </div>
+        <h2>مقالات مختارة</h2>
+        <div
+            class="head-text d-flex justify-content-between flex-column flex-md-row align-items-start">
+            <p>محتوى منتقى لبدء رحلة تعلمك</p>
+            <a type="button"
+                class="btn d-flex justify-content-center align-items-center gap-2 rounded-3">
+                <p class="mb-0 text-white">
+                    عرض الكل
+                </p>
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+        </div>
+        @for (article of filteredArticles; track $index) {
+        <article
+            type="button"
+            class="article mt-5 d-flex flex-column flex-md-row cursor-pointer">
+            <div
+                class="tag d-flex align-items-center justify-content-center gap-2 p-2 rounded-pill">
+                <i class="fa-solid fa-star"></i>
+                <p class="text-white">مميز</p>
+            </div>
+            <div class="image-holder w-100 w-lg-50">
+                <img [src]="article.image" class="w-100 h-100"
+                    alt="cover-image">
+            </div>
+            <div
+                class="p-4 w-100 w-lg-50 d-flex flex-column justify-content-between">
+                <div>
+                    <div class="head d-flex gap-4">
+                        <div class="badge px-3 py-2 rounded-pill">
+                            <p class="mb-0 fw-bold">{{article.tags[0]}}</p>
+                        </div>
+                        <div class="time d-flex align-items-center gap-2">
+                            <i class="fa-regular fa-clock"></i>
+                            <p class="mb-1">{{article.readTime}}</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="mb-3">{{article.title}}</h2>
+                        <p>{{article.excerpt}}</p>
+                    </div>
+                </div>
+                <div class="author w-100 d-flex justify-content-between">
+                    <div class="d-flex gap-3">
+                        <div class="holder">
+                            <div class="avatar rounded-circle overflow-hidden">
+                                <img [src]="article.author.avatar"
+                                    class="w-100 h-100"
+                                    alt="avatar">
+                            </div>
+                        </div>
+                        <div class="person-details">
+                            <p
+                                class="text-white mb-0 fw-bold">{{article.author.name}}</p>
+                            <p
+                                class="lead mb-0">{{article.author.role}}</p>
+                        </div>
+                    </div>
+                    <div class="read-more d-flex align-items-center gap-3">
+                        <p class="mb-0 my-primary-color">اقرأ المقال</p>
+                        <i
+                            class="fa-solid fa-arrow-left my-primary-color"></i>
+                    </div>
+                </div>
+            </div>
+        </article>
+        }
+    </div>
 </div>

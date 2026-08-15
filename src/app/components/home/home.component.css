@@ -14,7 +14,7 @@
 
 .badge{
     background-color: #ff6a1a1c;
-    border: 1px solid #ff6a1a41;
+    border: 2px solid #ff6a1a41;
 }
 
 .badge span{
@@ -131,13 +131,171 @@
     bottom: 256px;
     right: 336px;
     opacity: 0.05;
+}
+
+#mini-blog{
+    background-color: #0A0A0A;
+    padding: 96px 0px;
+    position: relative;
+}
+#mini-blog::before{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 106, 26, 0.10),
+        rgba(255, 106, 26, 0.09),
+        rgba(255, 106, 26, 0.04)
+    );
+    border-radius: 0 24px 24px 0;
+    box-shadow: -18px 0 40px rgba(255, 106, 26, 0.26), 12px 0 24px rgba(255, 106, 26, 0.08);
+    filter: blur(70px);
+}
+
+#mini-blog h2{
+    font-size: 2.25rem;
+    color: white;
+}
+#mini-blog p{
+    color: var(--color-text-muted);
+}
+
+#mini-blog .badge span{
+    color: var(--color-primary);
+}
+#mini-blog .head-text a{
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    background : var(--button-gradient);
+}
+
+#mini-blog .article {
+    position: relative;
+    z-index: 10;
+    background-color: #161616;
+    min-height: 390px;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+#mini-blog .article .tag {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 4px 16px 4px 24px;
+    background: linear-gradient(90deg, #FF6A1A 0%, #fc9761 100%);
+    color: white;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 1;
+    z-index: 2;
+}
+
+#mini-blog .article .tag i {
+    color: #fff;
+    font-size: 13px;
+}
+#mini-blog .article .tag p{
+    margin-bottom: 3px;
+}
+/* -- hover -- */
+#mini-blog .article:hover{
+    border:1px solid rgba(var(--color-primary-rgb, 255,106,26), 0.35);
+    transition: all 0.3s ease;
+}
+#mini-blog .article:hover .image-holder img{
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+#mini-blog .article:hover .content h2{
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+#mini-blog .article:hover .read-more p{
+    left: 10px;
+    transition: all 0.3s ease;
+}
+/* end hover */
+
+#mini-blog .article .image-holder{
+    overflow: hidden;
+}
+#mini-blog .article .image-holder img{
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+#mini-blog .article .head .badge p{
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+#mini-blog .article .head .time,
+#mini-blog .article .head .time p{
+    color: #757575;
+}
+#mini-blog .article .content h2{
+    font-weight: 700;
+    font-size: 1.850rem;
+    transition: 0.3s;
 
 }
+#mini-blog .article .content p{
+    color: #757575;
+}
+/* #mini-blog .article .author{
+    width: 50px;
+    height: 50px;
+} */
+#mini-blog .article .author .avatar{
+    width: 50px;
+    height: 50px;
+}
+.author .holder{
+    position: relative;
+}
+.author .holder::after{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    bottom: 0;
+    left: -5px;
+    border: 2px solid black;
+}
+.author .person-details p:nth-child(2){
+    font-size: 12px;
+}
+.read-more p{
+    position: relative;
+    left: 0;
+    transition: 0.3s;
+}
+
 @media (min-width: 995px) {
     .words h1{
         font-size: 4.5rem;
     }
     .words p {
         font-size: 1.5rem;
+    }
+    #mini-blog h2{
+        font-size: 3.75rem;
+    }
+    #mini-blog p{
+        font-size: 20px;
     }
 }

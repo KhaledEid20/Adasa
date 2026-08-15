@@ -1,5 +1,7 @@
 nav{
     background-color: var(--color-bg);
+    width: 100%;
+    max-width: 100%;
 }
 .image-holder{
     width: 10%;
