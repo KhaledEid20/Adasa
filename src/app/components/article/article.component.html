@@ -1,0 +1,187 @@
+<div class="fullpage">
+    <section class="head-image">
+        <div
+            class="top-image w-100 d-flex flex-column px-4 justify-content-between "
+            [style.background-image]="'url(' + article?.image +')'">
+            <div class="badge d-flex gap-1 rounded-pill">
+                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-angle-left mb-0"></i>
+                <p class="mb-0" [routerLink]="['/blog']"
+                    style="cursor: pointer;">المدونة</p>
+                <i class="fa-solid fa-angle-left"></i>
+                <p class="mb-0 my-primary-color">{{article?.tags?.[0]}}</p>
+            </div>
+            <div
+                class="w-100 h-100 d-flex justify-content-center align-items-center position-relative z-3">
+                <div
+                    class="content d-flex justify-content-center flex-column gap-3">
+                    <div class="head d-flex align-items-center gap-3">
+                        <div class="category bg-primary-color rounded-pill">
+                            <p
+                                class="mb-0 py-1 px-2 text-white">{{article?.tags?.[0]}}</p>
+                        </div>
+                        <p
+                            class="mb-0 d-flex text-white d-flex align-items-center gap-2"><i
+                                class="fa-solid fa-calendar"></i>
+                            <span>{{article?.date}}</span></p>
+                        <p
+                            class="mb-0 d-flex text-white d-flex align-items-center gap-2"><i
+                                class="fa-regular fa-clock"></i>
+                            <span>{{article?.readTime}}</span></p>
+                    </div>
+                    <div class="title">
+                        <h1
+                            class="text-white">{{article?.title}}</h1>
+                    </div>
+                    <div
+                        class="author d-flex gap-4 align-items-center p-3">
+                        <div
+                            class="image-holder rounded-circle overflow-hidden">
+                            <img [src]="article?.author?.avatar" alt="avatar"
+                                class="w-100">
+                        </div>
+                        <div class="name">
+                            <p
+                                class="mb-0 text-white">{{article?.author?.name}}</p>
+                            <p
+                                class="mb-0 text-white">{{article?.author?.role}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    </section>
+    <section class="left">
+        <div class="overview container-fluid container-lg m-auto mx-auto">
+            <div class="inner-overview">
+                <span class="head d-flex align-items-center gap-3 ">
+                    <div class="icon d-flex ">
+                        <i
+                            class="fa-solid fa-list-check text-white fs-5 my-primary-color"></i>
+                    </div>
+                    <h3 class="text-white">محتويات المقال</h3>
+                </span>
+                <div class="titles p-3 d-flex flex-column gap-3">
+                    @for (item of displayedTitles; track $index) {
+                    <a
+                        class="item d-flex align-items-center gap-1 text-decoration-none gap-3">
+                        <span>{{ $index + 1 }}</span>
+                        <p class="mb-0">{{ item }}</p>
+                    </a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid container-lg m-auto mx-auto mt-4">
+            <div
+                class="meta-data d-flex gap-3">
+                <div
+                    class="card w-50 d-flex flex-column align-items-center justify-content-center gap-2 p-4">
+                    <i class="fa-regular fa-clock my-primary-color fs-3"></i>
+                    <span
+                        class="fw-bolder text-white fs-5">{{article?.readTime}}</span>
+                    <span class="text-light">وقت القراءة</span>
+                </div>
+                <div
+                    class="card w-50 d-flex flex-column align-items-center justify-content-center gap-2 p-4">
+                    <i class="fa-regular fa-calendar my-primary-color fs-3"></i>
+                    <span
+                        class="fw-bolder text-white fs-5">{{article?.date}}</span>
+                    <span class="text-light">تاريخ النشر</span>
+                </div>
+            </div>
+        </div>
+        <div class="browse container-fluid container-lg m-auto mx-auto">
+            <div
+                class="check mt-4 d-flex flex-column w-100 justify-content-center align-items-center p-5 gap-3">
+                <div class="icon p-3">
+                    <i class="fa-solid fa-envelope my-primary-color fs-3"></i>
+                </div>
+                <span class="fs-5 text-white fw-bolder">لا تفوّت جديدنا</span>
+                <span class="text-light">اشترك للحصول على أحدث المقالات</span>
+                <span role="button"
+                    [routerLink]="['/blog']"
+                    class="text-white py-2 bg-primary-color w-100 rounded-2 fw-bolder text-center cursor-pointer">تصفح
+                    المزيد</span>
+            </div>
+        </div>
+    </section>
+    <section class="right mt-4">
+        <div class="container-fluid container-lg m-auto mx-auto">
+            <div class="outcomes p-3 w-100">
+                <p class="mb-0 text-light fst-italic">"{{article?.excerpt}}"</p>
+            </div>
+            <div class="main-content p-3 w-100">
+                <p class="text-light">{{content[0]}}</p>
+            </div>
+            <div class="details gap-3 d-flex flex-column gap-2">
+                @for (item of displayedTitles; track $index) {
+                <div class="mb-3">
+                    <div
+                        class="head d-flex align-items-center gap-4 fw-bolder text-white d-flex gap-2">
+                        <div class="icon">
+                            <i
+                                class="fa-solid fa-camera fs-4 my-primary-color"></i>
+                        </div>
+                        <span class="fs-4">{{titles[$index]}}</span>
+                    </div>
+                    <p class="mb-0">{{content[$index+1]}}</p>
+                </div>
+                }
+            </div>
+            <div class="tags d-flex flex-column gap-4">
+                <div
+                    class="head-tags gap-3 d-flex rounded-3 align-items-center">
+                    <div class="icon p-2">
+                        <i class="fa-solid fa-tags my-primary-color fs-6"></i>
+                    </div>
+                    <span class="fs-5 text-white">الوسوم</span>
+                </div>
+                <div class="d-flex gap-2">
+                    @for (item of article?.tags; track $index) {
+                    <span role="button"
+                        class="tag p-2 text-light rounded-pill">#{{item}}</span>
+                    }
+                </div>
+            </div>
+            <div class="links d-flex justify-content-between mt-4">
+                <div
+                    class="head-tags gap-3 d-flex align-items-center rounded-3">
+                    <div class="icon p-2">
+                        <i
+                            class="fa-solid fa-share-nodes my-primary-color fs-6"></i>
+                    </div>
+                    <span class="fs-5 text-white">شارك المقال</span>
+                </div>
+                <div class="d-flex gap-2">
+                    <div class="twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                    <div class="linked-in">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <div class="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div class="share">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="author d-flex align-items gap-4 mt-4">
+                <div class="image-holder">
+                    <img [src]="[article?.author?.avatar]" alt="author-avatar"
+                        class="w-100">
+                </div>
+                <div class="content d-flex flex-column">
+                    <span class="fw-bolder my-primary-color">كاتب
+                        المقال</span>
+                    <span
+                        class="fw-bolder my-primary-color fs-4">{{article?.author?.name}}</span>
+                    <p
+                        class="mb-0 text-light lead fs-6">{{article?.author?.role}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

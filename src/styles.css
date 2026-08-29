@@ -3,7 +3,7 @@
     color: white;
 }
 :root {
-    --color-bg: #1a1a1adc;
+    --color-bg: #1a1a1a;
     --color-primary: #ff6b1a;      
     --color-primary-hover: #e85d0f;
     --text-gradient: linear-gradient(135deg, #f97316, #fbbf24);;
@@ -22,4 +22,7 @@ body {
 }
 .my-primary-color{
     color: var(--color-primary-hover) !important;
+}
+.bg-primary-color{
+    background-color: var(--color-primary-hover) !important;
 }

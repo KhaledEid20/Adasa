@@ -100,7 +100,7 @@
         </div>
         @for (article of filteredArticles; track $index) {
         <article
-            type="button"
+            [routerLink]="['/blog' , article.id]"
             class="article mt-5 d-flex flex-column flex-md-row cursor-pointer">
             <div
                 class="tag d-flex align-items-center justify-content-center gap-2 p-2 rounded-pill">

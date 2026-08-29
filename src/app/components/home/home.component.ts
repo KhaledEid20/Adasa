@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
-import {Article} from '../../../assets/Models/Article'
-import articleData from '../../../assets/data/posts.json'
+import { Component, inject } from '@angular/core';
+import { RouterLink } from "@angular/router";
+import { ArticleComponent } from "../article/article.component";
+import { ArticlesHendler } from '../../services/articles-hendler';
+import { Article } from '../../../assets/Models/Article';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink, ArticleComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  articles: Article[] = articleData.posts;
-  get filteredArticles() {
-    return this.articles.filter(a => a.id <= 3);
-}
+  filteredArticles : Article[] = []
+  articleService = inject(ArticlesHendler)
+
+  constructor(){
+    this.filteredArticles = this.articleService.getfilteredArticles()
+  }
 }
