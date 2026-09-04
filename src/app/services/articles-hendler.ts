@@ -16,4 +16,7 @@ export class ArticlesHendler {
   getAllData(){
     return this.articles
   }
+  getByFilter(filter : string){
+    return this.articles.filter(a => a.category == filter);
+  }
 }

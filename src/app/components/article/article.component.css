@@ -247,10 +247,82 @@
     color: #ffffff;
 }
 
+.read-more .head{
+    border-top: 1px solid var(--color-border-subtle);
+    padding: 20px 0px;
+}
+.read-more .head span{
+    cursor: pointer;
+}
+.read-more .head span i{
+    transition: 0.5s all;
+}
+.read-more .head span:hover i{
+    cursor: pointer;
+    position: relative;
+    left: -5px;
+    transition: 0.5s all;
+}
+.read-more .title .icon{
+    background-color: #ff6a1a23;
+    border: 1px solid #ff6a1a88;
+    border-radius: 10px;
+    width: fit-content;
+}
+.more-article .card-item{
+    border-radius: 15px;
+}
+
+.more-article .author p{
+    font-size: 12px;
+}
+.more-article .main-image{
+    position: relative;
+}
+.more-article .main-image::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #111111 0%, #1111116e 35% , transparent 50%);
+    pointer-events: none;
+
+}
+.more-article .author span{
+    font-size: .75rem;
+}
+.more-article .author .image-holder {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+}
+.more-article .card-item:hover {
+    border-color: var(--color-primary);
+    transition: all 0.2s;
+}
+.more-article .card-item .main-image img{
+    transition: transform 0.5s ease-out;
+}
+.more-article .card-item:hover .main-image img{
+    transform: scale(1.05) rotate(1deg);
+}
+
+.more-article .card-item{
+    cursor: pointer;
+    height: 270px;
+}
+.more-article .card-item .title p{
+    color: white;
+    transition: 0.2s all;
+}
+.more-article .card-item:hover .title p{
+    color: var(--color-primary);
+    transition: 0.2s all;
+}
+
 @media (min-width: 768px) {
     .top-image .content .title h1 { font-size: 3rem; }
-
-    }
+}
 @media (min-width: 992px) {
     .top-image .content .title h1 { font-size: 3.5rem; }
     .top-image .content{

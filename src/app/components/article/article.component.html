@@ -106,7 +106,7 @@
             </div>
         </div>
     </section>
-    <section class="right mt-4">
+    <section class="right mt-4 mb-4">
         <div class="container-fluid container-lg m-auto mx-auto">
             <div class="outcomes p-3 w-100">
                 <p class="mb-0 text-light fst-italic">"{{article?.excerpt}}"</p>
@@ -181,6 +181,69 @@
                     <p
                         class="mb-0 text-light lead fs-6">{{article?.author?.role}}</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="read-more">
+        <div class="container-fluid container-lg m-auto mx-auto">
+            <div class="head d-flex align-items-center justify-content-between">
+                <div class="title d-flex align-items-center gap-3">
+                    <div
+                        class="icon p-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-images my-primary-color fs-3"></i>
+                    </div>
+                    <div class="content">
+                        <h4 class="text-white fw-bolder mb-0">مقالات قد
+                            تعجبك</h4>
+                        <p class="text-light fw-light mb-0">استكشف المزيد من
+                            المحتوى
+                            المميز</p>
+                    </div>
+                </div>
+                <span
+                    class="d-flex align-items-center gap-3 my-primary-color"
+                    [routerLink]="['/blog']">
+                    <p class="mb-0">عرض الكل</p>
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </span>
+            </div>
+            <div class="more-article row g-3">
+                @for (item of articleService.getByFilter(article?.tags?.[0] ||
+                ''); track $index) {
+                @if ($index <= 2) {
+                <div class="col-12 col-md-6 col-lg-4"
+                    [routerLink]="['/blog' , item.id]">
+                    <div
+                        class="card-item overflow-hidden sec-dark-bg card-border">
+                        <div class="main-image  overflow-hidden">
+                            <img [src]="[item.image]" alt="articleImage"
+                                class="w-100">
+                        </div>
+                        <div class="title p-2">
+                            <p
+                                class="mb-0 fw-bolder">{{item?.title}}</p>
+                        </div>
+                        <div
+                            class="author d-flex justify-content-between align-items-center p-2">
+                            <div class="d-flex gap-2 align-items-center">
+                                <div
+                                    class="image-holder">
+                                    <img [src]="[item?.author?.avatar]"
+                                        class="w-100"
+                                        alt="author">
+                                </div>
+                                <span
+                                    class="text-sec-color">{{item?.author?.name}}</span>
+                            </div>
+                            <div class="read-time">
+                                <span
+                                    class="text-sec-color">{{item?.readTime}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                }
             </div>
         </div>
     </section>
